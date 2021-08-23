@@ -1,21 +1,24 @@
 const fs = require('fs');
 
-fs.readFile('./archive.txt', { encoding: 'utf-8' }, (err, data) =>
+var content;
+
+fs.readFile('./user.json', { encoding: 'utf-8' }, (err, data) =>
 {
     if (err)
     {
-        console.log('Error');
+        console.log('Error while reading');
     }
     else
     {
-        console.log(data);
+        content = JSON.parse(data);
+        console.log(content)
     }
 });
 
-fs.writeFile('./archive.txt', "New Content", (err) =>
-{
-    if (err)
-    {
-        console.log('Error while saving');
-    }
-})
+// fs.writeFile('./archive.txt', "New Content", (err) =>
+// {
+//     if (err)
+//     {
+//         console.log('Error while saving');
+//     }
+// })
