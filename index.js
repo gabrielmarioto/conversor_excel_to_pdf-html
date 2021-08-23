@@ -11,3 +11,11 @@ fs.readFile('./archive.txt', { encoding: 'utf-8' }, (err, data) =>
         console.log(data);
     }
 });
+
+fs.writeFile('./archive.txt', "New Content", (err) =>
+{
+    if (err)
+    {
+        console.log('Error while saving');
+    }
+})
