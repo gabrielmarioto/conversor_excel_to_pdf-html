@@ -1,4 +1,5 @@
 const Reader = require("./src/Models/Reader.js");
+const Processor = require("./src/Models/Processor.js");
 
 const leitor = new Reader();
 
@@ -7,7 +8,8 @@ const leitor = new Reader();
 async function main()
 {
     var data = await leitor.Read("./user.csv");
-    console.log(data);
+    var dataProcess = Processor.Process(data);
+
 }
 
 main();
